@@ -1,0 +1,83 @@
+%
+% This is the main LaTeX file for the final report. It has all the definitions, package
+% configuration and imports all the separate chapters.
+%
+
+%%% Packages and configuration
+
+\documentclass[a4paper,12p,titlepage]{report}
+
+% Comment this line to remove the 'DRAFT' watermark.
+%\def\CONCEPTWATERMARKFLAG{}
+
+% Allow the use of figures and pictures
+\usepackage{graphicx}
+% References
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+            linkcolor=black,
+            urlcolor=blue,
+            pdftitle={OOPP Group 40 final report},
+            pdfauthor={Group 40}}
+
+% Colors
+%\usepackage{geometry}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{color}
+% Easily add extra space character
+\usepackage{xspace}
+% Allow for verbatim in footnotes
+\usepackage{fancyvrb}
+\VerbatimFootnotes
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+    backgroundcolor=\color{lbcolor},
+    tabsize=4,
+}
+
+
+% Wrap text around figures
+\usepackage{wrapfig}
+
+% Watermarking for drafts
+\ifdefined\CONCEPTWATERMARKFLAG
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{6}
+\SetWatermarkColor[gray]{0.9}
+\fi
+
+%%% Document
+
+\begin{document}
+
+\title{OOPP Final Report}
+\date{\today}
+%\author{Andreas Achilleos (number), Alp Capanoglu (number), Jordy Koemans (number),
+%    Omar Sheasha (number), Sung Park (number), Martijn Staal (number), Just van der Veeken}
+\author{OOPP Group 40}
+
+\pagenumbering{roman}
+\maketitle
+\tableofcontents
+
+\include{preface}
+
+\pagenumbering{arabic}
+
+\include{product}
+
+\include{process}
+
+\include{reflection}
+
+\include{fb}
+\include{ethics}
+
+
+\end{document}

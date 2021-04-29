@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="root" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="picle.view.FriendsViewController">
+   <children>
+      <Rectangle fx:id="scrollBackdrop" arcHeight="15.0" arcWidth="15.0" fill="#464646" height="651.0" layoutX="356.0" layoutY="52.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeType="INSIDE" strokeWidth="0.0" width="723.0" />
+      <JFXTextField fx:id="txtField" focusColor="#a1e24e" layoutX="1098.0" layoutY="531.0" style="-fx-background-color: #DDDDDD;" unFocusColor="#7f7f7f">
+         <font>
+            <Font name="Typo Round Light Demo" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="searchButton" graphicTextGap="10.0" layoutX="1121.0" layoutY="458.0" styleClass="buttons" stylesheets="@../style/friends.css" text="Search">
+         <font>
+            <Font name="Typo Round Light Demo" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/SearchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="socialOptions" graphicTextGap="10.0" layoutX="1088.0" layoutY="116.0" style="-fx-border-radius: 10;" styleClass="buttons" stylesheets="@../style/friends.css" text="Friend Options">
+         <ripplerFill>
+            <LinearGradient endX="0.5267175718118215" endY="1.0" startX="0.5076335950662162">
+               <stops>
+                  <Stop color="#b7ff5a" />
+                  <Stop color="#74a434" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="Typo Round Light Demo" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/FriendsIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="addButton" graphicTextGap="10.0" layoutX="1150.0" layoutY="575.0" onAction="#addFriend" styleClass="buttons" stylesheets="@../style/friends.css" text="Add">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/AddIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <ripplerFill>
+            <LinearGradient endX="0.5267175718118215" endY="1.0" startX="0.5076335950662162">
+               <stops>
+                  <Stop color="#b7ff5a" />
+                  <Stop color="#74a434" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <font>
+            <Font name="Typo Round Light Demo" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="deleteButton" graphicTextGap="10.0" layoutX="1121.0" layoutY="400.0" onAction="#deleteFriend" styleClass="buttons" stylesheets="@../style/friends.css" text="Delete">
+         <font>
+            <Font name="Typo Round Light Demo" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/DeleteIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXNodesList fx:id="friendControls" layoutX="1096.0" layoutY="116.0" />
+      <JFXNodesList fx:id="search" layoutX="1015.0" layoutY="305.0" />
+      <TableView fx:id="friendsTable" layoutX="384.0" layoutY="122.0" prefHeight="556.0" prefWidth="668.0" style="-fx-background-radius: 6;" stylesheets="@../style/friends.css">
+         <placeholder>
+            <Label styleClass="applyFont" stylesheets="@../style/friends.css" text="No friends to show :(" />
+         </placeholder>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label alignment="CENTER" layoutX="384.0" layoutY="63.0" prefWidth="668.0" styleClass="applyFont" stylesheets="@../style/friends.css" text="Friends List" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="720.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="337.0">
+         <fill>
+            <LinearGradient endX="0.7047619047619047" endY="0.9238095238095239" startX="0.0380952380952381" startY="0.18095238095238095">
+               <stops>
+                  <Stop color="#b7ff5a" />
+                  <Stop color="#74a434" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="212.0" fitWidth="190.0" layoutX="68.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/DefaultProfilePucture.png" />
+         </image>
+         <viewport>
+            <Rectangle2D minX="100.0" minY="100.0" />
+         </viewport>
+      </ImageView>
+      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutY="212.0" prefHeight="45.0" prefWidth="337.0" styleClass="applyFontBold" stylesheets="@../style/home.css" text="Username" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="307.0" styleClass="applyFontBold" stylesheets="@../style/home.css" text="Score">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <ToggleButton fx:id="friendsButton" contentDisplay="TOP" layoutX="18.0" layoutY="383.0" mnemonicParsing="false" prefHeight="151.0" prefWidth="145.0" selected="true" styleClass="HomeButton" stylesheets="@../style/home.css" text="Friends" textFill="WHITE">
+         <font>
+            <Font name="Typo Round Bold Demo" size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="95.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/FriendsIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.28" />
+               </effect>
+            </ImageView>
+         </graphic>
+         <toggleGroup>
+            <ToggleGroup fx:id="dash" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="scoreboardButton" contentDisplay="TOP" layoutX="172.0" layoutY="383.0" mnemonicParsing="false" onAction="#goToScoreboard" prefHeight="151.0" prefWidth="145.0" styleClass="HomeButton" stylesheets="@../style/home.css" text="Scoreboard" textAlignment="CENTER" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="dash" />
+         </toggleGroup>
+         <font>
+            <Font name="Typo Round Bold Demo" size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="107.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ScoreboardIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.28" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="achievementsButton" contentDisplay="TOP" layoutX="18.0" layoutY="545.0" mnemonicParsing="false" onAction="#goToAchievements" prefHeight="151.0" prefWidth="145.0" styleClass="HomeButton" stylesheets="@../style/home.css" text="Achieve&#10;ments" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <toggleGroup>
+            <ToggleGroup fx:id="dash" />
+         </toggleGroup>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/AchievenemtIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.28" />
+               </effect>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Typo Round Bold Demo" size="21.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton fx:id="homeButton" contentDisplay="TOP" layoutX="172.0" layoutY="545.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="151.0" prefWidth="145.0" styleClass="HomeButton" stylesheets="@../style/home.css" text="Home" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="dash" />
+         </toggleGroup>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/HomeIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.28" />
+               </effect>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Typo Round Bold Demo" size="21.0" />
+         </font>
+      </ToggleButton>
+      <ImageView fitHeight="150.0" fitWidth="35.0" layoutX="21.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/PicleScores.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="120.0" layoutX="1156.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="score" alignment="CENTER" layoutX="147.0" layoutY="305.0" prefHeight="51.0" prefWidth="190.0" styleClass="applyFont2" stylesheets="@../style/home.css" text="0000" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="levelBar" layoutX="82.0" layoutY="269.0" prefHeight="23.0" prefWidth="200.0" progress="0.68" stylesheets="@../style/home.css">
+         <effect>
+            <DropShadow color="#1c6400" height="25.0" radius="12.0" width="25.0" />
+         </effect>
+      </ProgressBar>
+      <Label fx:id="levelLabel" alignment="CENTER" layoutX="3.0" layoutY="260.0" prefHeight="36.0" prefWidth="78.0" styleClass="applyFont2" stylesheets="@../style/home.css" text="00">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

@@ -1,0 +1,10 @@
+@font-face{
+	src: url('fonts/TypoRoundBold.ttf');
+}
+@font-face{
+	src: url('fonts/TypoRound.ttf');
+}
+
+.applyFont{
+	-fx-font-family: "Typo Round Regular Demo";
+}

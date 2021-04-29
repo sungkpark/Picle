@@ -1,0 +1,42 @@
+@font-face{
+	src: url('fonts/TypoRoundBold.ttf');
+}
+@font-face{
+	src: url('fonts/TypoRound.ttf');
+}
+
+.activityButton{
+	-fx-background-color: #3B3B3B;
+	-fx-background-radius: 10;
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 32;
+}
+.activityButton:hover{
+	-fx-background-color: #222222;
+	-fx-effect: innershadow(gaussian, rgba(40, 40, 40, 0.6), 10, 0, 5, 5);
+}
+.activityButton:pressed{
+	-fx-translate-y: 4;
+}
+
+.inputButton{
+	-fx-border-radius: 5;
+	-fx-background-color: linear-gradient(to right bottom, #B7FF5A, #75A635);
+}
+
+.textField{
+	-jfx-focus-color: #65bd00;
+}
+.applyFontNoSize{
+	-fx-font-family: "Typo Round Regular Demo";
+}
+.toggleSelect{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 26;
+}
+
+
+.applyFont{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 20;
+}

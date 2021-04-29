@@ -1,0 +1,43 @@
+@font-face{
+	src: url('fonts/TypoRoundBold.ttf');
+}
+@font-face{
+	src: url('fonts/TypoRound.ttf');
+}
+
+
+.LogInButton{
+	-fx-background-color: linear-gradient(to right bottom, #B7FF5A, #75A635);
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 28;
+}
+
+.LogInButton:hover{
+	-fx-background-color: linear-gradient(to right bottom, #9DDB4D, #598028);
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 28;
+}
+
+
+.jfx-snackbar-content {
+    -fx-background-color: linear-gradient(from 0% 0% to 50% 50%, reflect, #660000 0%, #7A0000 9%, #A60000 22%, #CF0000 35%, #E60000 43%, #FF0000 100%);
+    -fx-background-radius: 5;
+	-fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
+}
+.jfx-snackbar-toast {
+	-fx-font-family: "Typo Round Regular Demo";
+    -fx-text-fill: WHITE;
+    -fx-font-size: 16;
+}
+
+
+.LogInLabel{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 45;
+}
+
+.LogInInput{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 20;
+}
+

@@ -1,0 +1,72 @@
+@font-face{
+	src: url('fonts/TypoRoundBold.ttf');
+}
+@font-face{
+	src: url('fonts/TypoRound.ttf');
+}
+@font-face{
+	src: url('fonts/BerlinSans.ttf');
+}
+
+
+.table-view .column-header-background{
+	-fx-background-color: linear-gradient(to bottom, #9DDB4D, #598028);
+}
+
+.table-view .filler{
+	-fx-background-color: linear-gradient(to bottom, #9DDB4D, #598028);
+}
+
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, #9DDB4D, #598028);
+	-fx-border-color: #6daf26;
+	-fx-pref-height: 50;
+}
+
+.table-view .column-header .label{
+	-fx-font-size: 37;
+	-fx-text-fill: white;
+	-fx-text-align: CENTER;
+	-fx-font-family: "Typo Round Regular Demo";
+}
+
+
+.table-row-cell{
+    -fx-table-cell-border-color: #E8E8E8;
+	-fx-font-family: "Berlin Sans FB";
+	-fx-font-size: 25;
+	-fx-padding: 15 0 15 0;
+	-fx-cell-size: 80px;
+    -fx-text-align: CENTER;
+}
+
+
+.table-view .scroll-bar:vertical{
+	-fx-background-radius: 10;
+}
+.table-view .scroll-bar:vertical .thumb{
+    -fx-background-color:#74A434;
+	-fx-background-radius: 10;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+  -fx-background-color: null;
+  -fx-background-radius: 0;
+  -fx-background-insets: 0;
+  -fx-padding: 0;
+  -fx-shape: null;
+}
+.table-row-cell:selected{
+    -fx-background-color: #bdff87;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+.table-row-cell:selected .table-cell{
+	-fx-text-fill: #537735;
+}
+
+
+.applyFont{
+	-fx-font-family: "Typo Round Regular Demo";
+}

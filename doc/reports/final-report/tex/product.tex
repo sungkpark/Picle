@@ -1,0 +1,78 @@
+\chapter{Product}\label{ch:product}
+
+\section{Description and goal}
+Our product is called \emph{Picle}, which is an acronym for ``People Interactively Creating
+a Livable Environment''. Picle aims to enable users to make their ecological footprint
+smaller by tracking the saved amount of CO\textsubscript{2}-equivalents, comparing them
+with their friends and rewarding them achievements.
+
+\section{Product structure}
+The product consists of a client, an application server and a database server.
+
+The application server and the client communicate with each other via HTTP Basic Authenticated
+requests in a RESTful API. This API is defined in the \verb+doc/+ folder of this project.
+
+Picle is focused around \emph{activities}. Any thing that a user can do that has an impact
+on their CO\textsubscript{2} emissions could be made into an activity. We however needed
+to make a compromise to keep the score calculation maintainable and user friendly. For
+more accuracy you need more parameters, but the user obviously wants to fill in the least
+possible things.
+
+Activities are added to their personal database of activities by the user. Each activity
+modifies the score, which is the amount of kilograms of saved CO\textsubscript{2}-equivalent
+emissions saved, of the user. For each activity, we've established a formula to calculate
+this score with either one or two integer parameters. These formulas are obviously an
+approximation of reality, but with our research we have confidence that it portrays
+reality accurately enough for the goals of our application.
+
+\subsection{Client}
+The client is ``thin'', which is to say that the client doesn't store or calculate anything.
+This is to protect the integrity of the data and scores so the attack surface for
+possible cheaters is minimized. The thin nature of the client also enables extreme
+portability: users can log in on any device and still have all their data ready. The
+downside of this, is that a lot of data has to be fetched from the server when a new
+client connect. Another possible issue is that a user is not able to view their activities
+and score when their client is not connected to the server.
+
+The client has a graphical user interface, which is made using JavaFX.\footnote{\url{https://openjfx.io/}}
+
+\subsection{Application server}
+The application server is a server written in Java 11 using the Spring Boot framework.\footnote{\url{https://spring.io/projects/spring-boot}}
+The application server is the computational brain of the whole Picle application.
+
+When a user adds an activity, the client will send a \verb+POST+ request to the server.
+The server then first checks if the user is authenticated correctly. If it is authenticated
+correctly, the server calculates the score and stores the activity in the database.
+
+Most other workflow on the server works in a comparable way: an authenticated HTTP request
+is sent by the client which is then processed accordingly by the application server.
+
+This server centric approach makes it easy to have full control over the Picle application,
+but it has some downsides. Scaling the Picle application for a big amount of users becomes
+relatively hard with this approach, certainly when a client always retrieves all their
+data when a user starts the client.
+
+\subsection{Database server}
+For the database server, we have chosen to use MariaDB.\footnote{\url{https://mariadb.org/}}
+We chose MariaDB because it is a simple, free and open source SQL server.
+
+\section{Security}
+While designing and building our product we have mostly looked at three facets of security:
+data integrity, authentication and confidentiality of user data.
+
+\subsection{Data integrity}
+Since Picle is also partially a game, with the competitive aspects of comparing scores,
+it has to be a fair game. Therefore, we need to make sure that cheaters have no chance.
+This is done by making the server trust the client for absolutely the minimum amount
+necessary. Everything that can be done on the server, is done on the server.
+
+\subsection{Authentication}
+Every individual request from the client to the server is authenticated using HTTP Basic
+Authentication. With this approach, there is no such thing as a 'session', so any
+session stealing kind of attack is impossible. The passwords are stored hashed and salted
+on the database using PBKDF2.
+
+\subsection{Confidentiality of user data}
+Our application server is designed and implemented in such a way that a user can only
+access their own activities. This is important, because a user's activities may say a lot
+about their habits, if they use Picle a lot.

@@ -1,0 +1,129 @@
+@font-face{
+	src: url('fonts/TypoRoundBold.ttf');
+}
+@font-face{
+	src: url('fonts/TypoRound.ttf');
+}
+@font-face{
+	src: url('fonts/BerlinSans.ttf');
+}
+
+.HomeButton{
+	-fx-background-color: transparent;
+	-fx-background-radius: 6;
+	-fx-border-radius: 6;
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 21;
+}
+
+.HomeButton:hover{
+	-fx-background-color: linear-gradient(to right bottom, #9DDB4D, #598028);
+	-fx-border-color: #6daf26;
+	-fx-effect: innershadow(gaussian, rgba(40, 40, 40, 0.6), 10, 0, 5, 5);
+}
+.HomeButton:selected{
+	-fx-background-color: #628A2E;
+	-fx-effect: innershadow(gaussian, rgba( 50, 50, 50, 0.6), 10, 0, 5, 5);
+}
+
+
+.HomeActivity{
+	-fx-background-color: linear-gradient(to bottom, #A8E855, #74A434);
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 13;
+}
+.HomeActivity:hover{
+	-fx-background-color: linear-gradient(to bottom, #9DDB4D, #598028);
+	-fx-effect: innershadow(gaussian, rgba(40, 40, 40, 0.6), 20, 0, 3, 3);	
+}
+.HomeActivity:pressed{
+	-fx-translate-y: 4;
+}
+
+
+.windowButton:hover{
+	-fx-opacity: 0.9;
+}
+.windowButton:pressed{
+	-fx-translate-y: 4;
+}
+
+
+.scrollPane{
+	-fx-font-size: 15;
+}
+.scroll-bar:vertical{
+	-fx-background-radius: 10;
+}
+.scroll-bar:vertical .thumb{
+    -fx-background-color:#74A434;
+	-fx-background-radius: 10;
+}
+
+
+.feedActivity{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-background-color: #E1E1E1;
+	-fx-pref-width: 700;
+	-fx-pref-height: 140;
+	-fx-background-radius: 10;
+	-fx-padding: 0 0 0 20;
+	-fx-alignment: CENTER_LEFT;
+	-fx-background-insets: 0 0 8 0;
+	-fx-fill-height: false;
+	-fx-fill-width: false;
+	-fx-node-orientation: LEFT_TO_RIGHT;
+}
+.feedContainer{
+	-fx-padding: 8;
+}
+.feedLabel{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 22;
+	-fx-alignment: CENTER_LEFT;
+	-fx-pref-width: 350;
+	-fx-padding: 0 0 0 12;
+
+}
+.feedLabelScore{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 28;
+}
+
+.feedLabelScoreContainer{
+	-fx-alignment: CENTER;
+	-fx-pref-height: 94;
+	-fx-pref-width: 210;
+	-fx-translate-x: 10;
+	-fx-background-radius: 5;
+	-fx-background-color: #C8C8C8;
+	-fx-height: 90;
+	-fx-fill-height: false;
+	-fx-node-orientation: LEFT_TO_RIGHT;
+}
+
+
+.applyFontBold{
+	-fx-font-family: "Typo Round Bold Demo";
+	-fx-font-size: 35;
+}
+
+.applyFont{
+	-fx-font-family: "Typo Round Regular Demo";
+	-fx-font-size: 35;
+}
+.applyFont2{
+	-fx-font-family: "Berlin Sans FB";
+}
+
+
+.progress-bar .bar {
+    -fx-background-insets: 1,2,2,1;
+	-fx-background-color: linear-gradient(to right, #CEFF75, #00E064);
+}
+.progress-bar .track{
+    -fx-background-color: linear-gradient(to bottom, #777777, #1C1C1C);
+    -fx-background-insets:0;
+    -fx-background-radius: 2;
+}
+

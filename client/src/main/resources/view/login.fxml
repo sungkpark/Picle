@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="root" prefHeight="630.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="picle.view.LoginViewController">
+   <children>
+      <Rectangle fx:id="GreenRec" arcHeight="5.0" arcWidth="5.0" height="265.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0">
+         <fill>
+            <LinearGradient endX="0.8523809523809524" endY="1.0" startX="0.08571428571428572">
+               <stops>
+                  <Stop color="#b7ff5a" />
+                  <Stop color="#b7ff5a" offset="0.007662835249042145" />
+                  <Stop color="#74a434" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fx:id="picle" fitHeight="174.0" fitWidth="329.0" layoutX="254.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="username" layoutX="392.0" layoutY="242.0" prefHeight="48.0" prefWidth="330.0" styleClass="LogInInput" stylesheets="@../style/login.css">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <PasswordField fx:id="password" layoutX="392.0" layoutY="352.0" prefHeight="48.0" prefWidth="330.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <font>
+            <Font size="20.0" />
+         </font></PasswordField>
+      <Label fx:id="usernameLabel" layoutX="84.0" layoutY="233.0" styleClass="LogInLabel" stylesheets="@../style/login.css" text="Username">
+      </Label>
+      <Label fx:id="passwordLabel" layoutX="90.0" layoutY="343.0" styleClass="LogInLabel" stylesheets="@../style/login.css" text="Password">
+      </Label>
+      <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="152.0" layoutY="513.0" mnemonicParsing="false" onAction="#register" prefHeight="62.0" prefWidth="178.0" styleClass="LogInButton" stylesheets="@../style/login.css" text="REGISTER">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <effect>
+            <InnerShadow blurType="GAUSSIAN" color="#000000a3" height="30.0" radius="14.5" width="30.0" />
+         </effect></JFXButton>
+      <Label fx:id="errorMessage" layoutX="392.0" layoutY="417.0" prefHeight="22.0" prefWidth="259.0" text="" textFill="RED">
+         <font>
+            <Font name="Poiret One" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="508.0" layoutY="513.0" mnemonicParsing="false" onAction="#login" prefHeight="62.0" prefWidth="178.0" styleClass="LogInButton" stylesheets="@../style/login.css" text="LOG IN">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <effect>
+            <InnerShadow blurType="GAUSSIAN" color="#000000a3" height="30.0" radius="14.5" width="30.0" />
+         </effect>
+      </JFXButton>
+   </children>
+</Pane>
