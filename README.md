@@ -29,8 +29,8 @@ uses the correct database credentials.
 
 ## Organizational
 
-| Name | netid |
-|------|:-----:|
+| Name |
+|------|
 | Achilleos, Andreas |
 | Capanoglu, Alp | 
 | Koemans, Jordy | 
